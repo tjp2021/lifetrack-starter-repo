@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>LifeTrack — Tasks that stick</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Tailwind CSS via CDN (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="color-scheme" content="light dark">
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="max-w-xl mx-auto p-6">
+    <h1 class="text-3xl font-bold">LifeTrack</h1>
+    <p class="text-sm text-gray-600">A simple, mobile‑friendly task tracker.</p>
+  </header>
+
+  <main class="max-w-xl mx-auto px-4 pb-24">
+    <!-- Auth Card -->
+    <section class="bg-white rounded-xl shadow p-4 mb-4">
+      <h2 class="text-lg font-semibold mb-2">Account</h2>
+      <div id="auth-when-signed-out" class="space-y-3">
+        <input id="email" class="w-full border rounded-lg p-2" placeholder="Email" inputmode="email" />
+        <input id="password" class="w-full border rounded-lg p-2" placeholder="Password" type="password" />
+        <div class="flex gap-2">
+          <button id="btn-signup" class="flex-1 rounded-lg px-4 py-2 bg-blue-600 text-white">Sign up</button>
+          <button id="btn-signin" class="flex-1 rounded-lg px-4 py-2 bg-indigo-600 text-white">Sign in</button>
+        </div>
+        <p id="auth-msg" class="text-sm text-amber-700"></p>
+      </div>
+      <div id="auth-when-signed-in" class="hidden">
+        <div class="flex items-center justify-between mb-2">
+          <span id="user-email" class="text-sm font-medium"></span>
+          <button id="btn-signout" class="rounded-lg px-3 py-1 bg-gray-200">Sign out</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Task Entry -->
+    <section class="bg-white rounded-xl shadow p-4 mb-4">
+      <h2 class="text-lg font-semibold mb-2">Tasks</h2>
+      <div id="task-entry" class="hidden">
+        <div class="flex gap-2">
+          <input id="task-title" class="flex-1 border rounded-lg p-2" placeholder="Add a task..." />
+          <button id="btn-add" class="rounded-lg px-4 py-2 bg-green-600 text-white">Add</button>
+        </div>
+        <div class="flex items-center gap-2 mt-3">
+          <input id="toggle-completed" type="checkbox" class="h-4 w-4">
+          <label for="toggle-completed" class="text-sm">Show completed</label>
+        </div>
+      </div>
+      <ul id="task-list" class="divide-y divide-gray-200 mt-3"></ul>
+      <p id="empty-state" class="text-sm text-gray-500 mt-2 hidden">No tasks yet — add one above.</p>
+    </section>
+
+    <!-- Tips -->
+    <section class="text-xs text-gray-500 px-1">
+      <p>Tip: Long‑press task items on mobile to toggle their state.</p>
+    </section>
+  </main>
+
+  <!-- Supabase & App -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

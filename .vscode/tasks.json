@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "open index.html",
+      "type": "shell",
+      "command": "echo \"Open with Live Server or VS Code Live Preview\""
+    },
+    {
+      "label": "run holistic (guide)",
+      "type": "shell",
+      "command": "echo \"Insert prompts/run-holistic.md into Copilot Chat and follow the checklist\""
+    },
+    {
+      "label": "live preview",
+      "type": "shell",
+      "command": "npx --yes live-server --quiet --port=3000 index.html | cat",
+      "problemMatcher": []
+    }
+  ]
+}

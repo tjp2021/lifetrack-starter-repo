@@ -1,0 +1,8 @@
+{
+  "name": "lifetrack-starter",
+  "version": "0.2.0",
+  "scripts": {
+    "dev": "npx live-server --quiet --port=3000 index.html",
+    "build": "echo 'No build step needed; site is static.'"
+  }
+}
