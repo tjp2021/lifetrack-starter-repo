@@ -229,19 +229,36 @@ Resources:
 ## Lesson 8 – Deploy to Production
 🔹 Put your “prod” site on the public internet
 📁 *(repository hosting settings)*
-🛠️
-1. On GitHub click **“Create repository”** inside your fork (if you cloned locally first).
-2. Back in terminal:
-   ```bash
-   git remote add origin https://github.com/YOURNAME/lifetrack.git
-   git push -u origin main
-   ```
-3. In **Netlify** → “Add new site → Import from GitHub” → pick the repo.
-4. Build command = *(leave blank)* Publish directory = `/`
-5. Click **Deploy site**. Wait ~1 min.
-6. Netlify gives you `https://fancy-name.netlify.app` – open it on your phone.
-✅ Sign-up works from a mobile network; padlock icon shows HTTPS.
-⏪ Netlify → “Deploys” → click an older deploy → **Publish deploy** to roll back.
+🛠️ Choose ONE of the free options below.
+
+### Option A — GitHub Pages (100 % free, static, no build step)
+1. In your repo on GitHub go to **Settings → Pages**.
+2. Source = **Deploy from a branch**. Select **main** and folder `/public` (or root if you didn’t restructure).
+3. Click **Save**; wait ~30 s. GitHub gives you `https://YOURNAME.github.io/lifetrack-starter/`.
+4. Update your Supabase project’s *Auth → URL Configuration → Additional Redirect URLs* to include the new origin.
+
+### Option B — Netlify (free tier, auto-build on push)
+1. Visit netlify.com → **Add new site → Import from GitHub**.
+2. Pick the repo; for build command leave blank (static) or `npm run build` if you later add Vite.
+3. Publish directory = `public` or `/`.
+4. Click **Deploy site**. Netlify gives `https://fancy-name.netlify.app`.
+
+### Option C — Vercel (similar steps)
+
+✅ Open the live URL on mobile; sign-up works with Supabase.
+⏪ For GitHub Pages: switch branch dropdown back to **None** to unpublish. For Netlify/Vercel: rollback to previous deploy in the dashboard.
+
+**Learning goals & resources**
+• Understand static hosting vs build hosting.
+• Configure Supabase redirect origins.
+• Verify HTTPS and mobile accessibility.
+
+Resources:
+- GitHub Pages docs: https://docs.github.com/pages
+- Netlify Site Deploy docs: https://docs.netlify.com/site-deploys/
+- Vercel Quickstart: https://vercel.com/docs/concepts/deployments/quickstart
+
+✏️ Add a learning-lesson entry describing which host you chose and why.
 
 ---
 ## Lesson 9 – Polish the UI
